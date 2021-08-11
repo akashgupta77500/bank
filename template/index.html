@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<head>
+    <style>
+        .center {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<div class="center" style="margin-left:200px">
+
+    <form class="text-center border border-light p-10" action="success" method="POST">
+        {% csrf_token %}
+
+        <p class="h2 mb-3" style="color:black;"><i class="fas fa-coffee"></i> BUY ME A CUP OF COFFEE!!</p>
+        <p class="h4 mb-3" style="color:black">IF YOU LIKE THIS PROJECT.</p>
+
+        <input type="name" name="name" id="name" required class="form-control mb-4" placeholder="Your Name Please"style="text-align:center">
+
+        <!-- RAZORPAY INTEGRATION HERE -->
+        <script
+            src="https://checkout.razorpay.com/v1/checkout.js"
+            data-key="rzp_test_bQHBY8SqoVTEvg"
+            data-amount="50000"
+            data-currency="INR"
+            data-order_id="{{payment.id}}"
+            data-buttontext="MAKE PAYMENT"
+            data-name="AKASH GUPTA"
+            data-description="Django-Master"
+            data-image="static/images/akash.jpg"
+            data-prefill.name=""
+            data-prefill.email="you@gmail.com"
+            data-theme.color="black"
+
+        ></script>
+    </form>
+
+</div>
+
+
+</div>
+{% endblock %}
