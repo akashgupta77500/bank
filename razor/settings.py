@@ -33,14 +33,14 @@ ALLOWED_HOSTS = ['b-a-n-k.herokuapp.com']
 # Application definition
 
 INSTALLED_APPS = [
-    #'jet'
+    'base',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'base',
+
 ]
 
 MIDDLEWARE = [
